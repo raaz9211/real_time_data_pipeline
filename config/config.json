@@ -1,0 +1,8 @@
+{
+    "data_source": "file",
+    "file_path": "../data/input.txt",
+    "api_url": "https://example.com/data",
+    "output_path": "../data/output.txt",
+    "log_file_path": "../logs/output.log",
+    "enable_timestamp": true
+}

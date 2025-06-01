@@ -1,19 +1,20 @@
-[2025-06-01 19:45:52] [DEBUG] Producer thread started.
-[2025-06-01 19:45:52] [DEBUG] Collector thread started.
-[2025-06-01 19:45:52] [DEBUG] Consume thread started.
-[2025-06-01 19:45:52] [DEBUG] Producer thread finished.
-[2025-06-01 19:45:52] [DEBUG] Consume thread finished.
-[2025-06-01 19:45:52] [INFO] Total processed lines written: 5
-[2025-06-01 19:45:52] [DEBUG] Collector thread finished.
-[2025-06-01 19:45:52] [INFO] Data processing complete. Output written to ../data/output.txt
+[2025-06-02 01:04:49] [INFO] Real-Time Data Pipeline started.
+[2025-06-02 01:04:49] [DEBUG] Consume thread started.
+[2025-06-02 01:04:49] [DEBUG] Producer thread started.
+[2025-06-02 01:04:49] [DEBUG] Producer thread finished.
+[2025-06-02 01:04:49] [DEBUG] Consume thread finished.
+[2025-06-02 01:04:49] [DEBUG] Collector thread started.
+[2025-06-02 01:04:49] [INFO] Total processed lines written: 5
+[2025-06-02 01:04:49] [DEBUG] Collector thread finished.
+[2025-06-02 01:04:49] [INFO] Data processing complete. Output written to ../data/output.txt
 
-[2025-06-01 19:47:34] [INFO] Real-Time Data Pipeline started.
-[2025-06-01 19:47:34] [DEBUG] Producer thread started.
-[2025-06-01 19:47:34] [DEBUG] Consume thread started.
-[2025-06-01 19:47:34] [DEBUG] Producer thread finished.
-[2025-06-01 19:47:34] [DEBUG] Consume thread finished.
-[2025-06-01 19:47:34] [DEBUG] Collector thread started.
-[2025-06-01 19:47:34] [INFO] Total processed lines written: 5
-[2025-06-01 19:47:34] [DEBUG] Collector thread finished.
-[2025-06-01 19:47:34] [INFO] Data processing complete. Output written to ../data/output.txt
+[2025-06-02 01:06:47] [INFO] Real-Time Data Pipeline started.
+[2025-06-02 01:06:47] [DEBUG] Producer thread started.
+[2025-06-02 01:06:47] [DEBUG] Producer thread finished.
+[2025-06-02 01:06:47] [DEBUG] Consume thread started.
+[2025-06-02 01:06:47] [DEBUG] Collector thread started.
+[2025-06-02 01:06:47] [DEBUG] Consume thread finished.
+[2025-06-02 01:06:47] [INFO] Total processed lines written: 5
+[2025-06-02 01:06:47] [DEBUG] Collector thread finished.
+[2025-06-02 01:06:47] [INFO] Data processing complete. Output written to ../data/output.txt
 

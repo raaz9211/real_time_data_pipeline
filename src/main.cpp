@@ -9,6 +9,8 @@
 #include "DataProcessor.hpp"
 #include "Logger.hpp"
 #include "OutputWriter.hpp"
+#include "ConfigManager.hpp"
+
 
 int main()
 {
@@ -18,11 +20,14 @@ int main()
     std::atomic<bool> producer_done = false;
     std::atomic<bool> processing_done = false;
 
-    auto file_path = std::filesystem::path("../data/input.txt");
+    ConfigManager config("../config/config.json");
+
+
+    auto file_path = std::filesystem::path(config.getFilePath());
     std::unique_ptr<DataSource> fileReader = std::make_unique<FileDataSource>(file_path);
     DataProcessor dataProcessor;
-    OutputWriter outputWriter("../data/output.txt", OutputWriter::OutputMode::File, false, true);
-    Logger::instance().set_log_file("../logs/output.log");
+    OutputWriter outputWriter(config.getOutputPath(), OutputWriter::OutputMode::File, false, true);
+    Logger::instance().set_log_file(config.getLogFilePath());
 
     Logger::instance().log(LogLevel::INFO, "Real-Time Data Pipeline started.");
     std::clog << "Real-Time Data Pipeline started." << std::endl;
@@ -40,7 +45,7 @@ int main()
                              {
                                  Logger::instance().log(LogLevel::ERROR, (std::string) "Producer exception: " + e.what());
                              }
-                             producer_done = true; // ✅ Set this to notify consumer that no more data is coming
+                             producer_done = true; // Set this to notify consumer that no more data is coming
                          });
 
     // Consumer thread
@@ -83,7 +88,7 @@ int main()
     consume.join();
     collector.join();
 
-    std::clog << "Data processing complete. Output written to ../data/output.txt" << std::endl;
+    std::clog << "Data processing complete. Output written to " + config.getOutputPath() << std::endl;
     Logger::instance().log(LogLevel::INFO, "Data processing complete. Output written to ../data/output.txt\n");
 
     return 0;
