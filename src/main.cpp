@@ -12,8 +12,6 @@
 
 int main()
 {
-    Logger::instance().log(LogLevel::INFO, "Real-Time Data Pipeline started.");
-    std::cout << "Real-Time Data Pipeline started." << std::endl;
 
     ThreadSafeQueue<std::string> raw_queue;
     ThreadSafeQueue<std::string> processed_queue;
@@ -23,8 +21,11 @@ int main()
     auto file_path = std::filesystem::path("../data/input.txt");
     std::unique_ptr<DataSource> fileReader = std::make_unique<FileDataSource>(file_path);
     DataProcessor dataProcessor;
-    OutputWriter outputWriter("../data/output.txt");
+    OutputWriter outputWriter("../data/output.txt", OutputWriter::OutputMode::File, false, true);
     Logger::instance().set_log_file("../logs/output.log");
+
+    Logger::instance().log(LogLevel::INFO, "Real-Time Data Pipeline started.");
+    std::clog << "Real-Time Data Pipeline started." << std::endl;
 
     // Producer thread
     std::thread producer([&]()
@@ -82,7 +83,7 @@ int main()
     consume.join();
     collector.join();
 
-    std::cout << "Data processing complete. Output written to ../data/output.txt" << std::endl;
+    std::clog << "Data processing complete. Output written to ../data/output.txt" << std::endl;
     Logger::instance().log(LogLevel::INFO, "Data processing complete. Output written to ../data/output.txt\n");
 
     return 0;

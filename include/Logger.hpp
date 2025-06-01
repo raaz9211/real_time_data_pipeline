@@ -24,7 +24,6 @@ private:
     std::mutex log_mutex;
     std::ofstream log_file;
     std::string level_to_string(LogLevel level);
-    std::string current_timestamp();
 
 public:
     static Logger &instance();

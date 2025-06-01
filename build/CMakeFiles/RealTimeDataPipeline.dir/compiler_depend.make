@@ -461,6 +461,7 @@ CMakeFiles/RealTimeDataPipeline.dir/src/FileDataSource.cpp.o: /home/raaz/Program
 
 CMakeFiles/RealTimeDataPipeline.dir/src/Logger.cpp.o: /home/raaz/Programming/project/cpp-project/real_time_data_pipeline/src/Logger.cpp \
   /home/raaz/Programming/project/cpp-project/real_time_data_pipeline/include/Logger.hpp \
+  /home/raaz/Programming/project/cpp-project/real_time_data_pipeline/include/Utils.hpp \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -492,8 +493,11 @@ CMakeFiles/RealTimeDataPipeline.dir/src/Logger.cpp.o: /home/raaz/Programming/pro
   /usr/include/c++/13/bits/istream.tcc \
   /usr/include/c++/13/bits/locale_classes.h \
   /usr/include/c++/13/bits/locale_classes.tcc \
+  /usr/include/c++/13/bits/locale_conv.h \
   /usr/include/c++/13/bits/locale_facets.h \
   /usr/include/c++/13/bits/locale_facets.tcc \
+  /usr/include/c++/13/bits/locale_facets_nonio.h \
+  /usr/include/c++/13/bits/locale_facets_nonio.tcc \
   /usr/include/c++/13/bits/localefwd.h \
   /usr/include/c++/13/bits/memory_resource.h \
   /usr/include/c++/13/bits/memoryfwd.h \
@@ -506,9 +510,11 @@ CMakeFiles/RealTimeDataPipeline.dir/src/Logger.cpp.o: /home/raaz/Programming/pro
   /usr/include/c++/13/bits/postypes.h \
   /usr/include/c++/13/bits/predefined_ops.h \
   /usr/include/c++/13/bits/ptr_traits.h \
+  /usr/include/c++/13/bits/quoted_string.h \
   /usr/include/c++/13/bits/range_access.h \
   /usr/include/c++/13/bits/refwrap.h \
   /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/sstream.tcc \
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/std_mutex.h \
   /usr/include/c++/13/bits/stl_algobase.h \
@@ -547,16 +553,19 @@ CMakeFiles/RealTimeDataPipeline.dir/src/Logger.cpp.o: /home/raaz/Programming/pro
   /usr/include/c++/13/ext/type_traits.h \
   /usr/include/c++/13/fstream \
   /usr/include/c++/13/initializer_list \
+  /usr/include/c++/13/iomanip \
   /usr/include/c++/13/ios \
   /usr/include/c++/13/iosfwd \
   /usr/include/c++/13/iostream \
   /usr/include/c++/13/istream \
   /usr/include/c++/13/limits \
+  /usr/include/c++/13/locale \
   /usr/include/c++/13/mutex \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/pstl/pstl_config.h \
   /usr/include/c++/13/ratio \
+  /usr/include/c++/13/sstream \
   /usr/include/c++/13/stdexcept \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
@@ -570,6 +579,7 @@ CMakeFiles/RealTimeDataPipeline.dir/src/Logger.cpp.o: /home/raaz/Programming/pro
   /usr/include/errno.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
+  /usr/include/libintl.h \
   /usr/include/linux/errno.h \
   /usr/include/locale.h \
   /usr/include/pthread.h \
@@ -655,7 +665,9 @@ CMakeFiles/RealTimeDataPipeline.dir/src/Logger.cpp.o: /home/raaz/Programming/pro
   /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -668,6 +680,7 @@ CMakeFiles/RealTimeDataPipeline.dir/src/Logger.cpp.o: /home/raaz/Programming/pro
 
 CMakeFiles/RealTimeDataPipeline.dir/src/OutputWriter.cpp.o: /home/raaz/Programming/project/cpp-project/real_time_data_pipeline/src/OutputWriter.cpp \
   /home/raaz/Programming/project/cpp-project/real_time_data_pipeline/include/OutputWriter.hpp \
+  /home/raaz/Programming/project/cpp-project/real_time_data_pipeline/include/Utils.hpp \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -699,8 +712,11 @@ CMakeFiles/RealTimeDataPipeline.dir/src/OutputWriter.cpp.o: /home/raaz/Programmi
   /usr/include/c++/13/bits/istream.tcc \
   /usr/include/c++/13/bits/locale_classes.h \
   /usr/include/c++/13/bits/locale_classes.tcc \
+  /usr/include/c++/13/bits/locale_conv.h \
   /usr/include/c++/13/bits/locale_facets.h \
   /usr/include/c++/13/bits/locale_facets.tcc \
+  /usr/include/c++/13/bits/locale_facets_nonio.h \
+  /usr/include/c++/13/bits/locale_facets_nonio.tcc \
   /usr/include/c++/13/bits/localefwd.h \
   /usr/include/c++/13/bits/memory_resource.h \
   /usr/include/c++/13/bits/memoryfwd.h \
@@ -713,9 +729,11 @@ CMakeFiles/RealTimeDataPipeline.dir/src/OutputWriter.cpp.o: /home/raaz/Programmi
   /usr/include/c++/13/bits/postypes.h \
   /usr/include/c++/13/bits/predefined_ops.h \
   /usr/include/c++/13/bits/ptr_traits.h \
+  /usr/include/c++/13/bits/quoted_string.h \
   /usr/include/c++/13/bits/range_access.h \
   /usr/include/c++/13/bits/refwrap.h \
   /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/sstream.tcc \
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/std_mutex.h \
   /usr/include/c++/13/bits/stl_algobase.h \
@@ -735,6 +753,7 @@ CMakeFiles/RealTimeDataPipeline.dir/src/OutputWriter.cpp.o: /home/raaz/Programmi
   /usr/include/c++/13/bits/utility.h \
   /usr/include/c++/13/cctype \
   /usr/include/c++/13/cerrno \
+  /usr/include/c++/13/chrono \
   /usr/include/c++/13/clocale \
   /usr/include/c++/13/cstddef \
   /usr/include/c++/13/cstdint \
@@ -753,15 +772,19 @@ CMakeFiles/RealTimeDataPipeline.dir/src/OutputWriter.cpp.o: /home/raaz/Programmi
   /usr/include/c++/13/ext/type_traits.h \
   /usr/include/c++/13/fstream \
   /usr/include/c++/13/initializer_list \
+  /usr/include/c++/13/iomanip \
   /usr/include/c++/13/ios \
   /usr/include/c++/13/iosfwd \
+  /usr/include/c++/13/iostream \
   /usr/include/c++/13/istream \
   /usr/include/c++/13/limits \
+  /usr/include/c++/13/locale \
   /usr/include/c++/13/mutex \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/pstl/pstl_config.h \
   /usr/include/c++/13/ratio \
+  /usr/include/c++/13/sstream \
   /usr/include/c++/13/stdexcept \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
@@ -775,6 +798,7 @@ CMakeFiles/RealTimeDataPipeline.dir/src/OutputWriter.cpp.o: /home/raaz/Programmi
   /usr/include/errno.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
+  /usr/include/libintl.h \
   /usr/include/linux/errno.h \
   /usr/include/locale.h \
   /usr/include/pthread.h \
@@ -860,7 +884,9 @@ CMakeFiles/RealTimeDataPipeline.dir/src/OutputWriter.cpp.o: /home/raaz/Programmi
   /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -1133,19 +1159,9 @@ CMakeFiles/RealTimeDataPipeline.dir/src/main.cpp.o: /home/raaz/Programming/proje
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
 
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h:
-
-/usr/include/libintl.h:
-
 /usr/include/c++/13/thread:
 
 /usr/include/c++/13/memory:
-
-/usr/include/c++/13/locale:
-
-/usr/include/c++/13/iomanip:
 
 /usr/include/c++/13/filesystem:
 
@@ -1154,6 +1170,16 @@ CMakeFiles/RealTimeDataPipeline.dir/src/main.cpp.o: /home/raaz/Programming/proje
 /usr/include/c++/13/bits/this_thread_sleep.h:
 
 /usr/include/c++/13/bits/stl_raw_storage_iter.h:
+
+/usr/include/c++/13/bits/shared_ptr_atomic.h:
+
+/usr/include/c++/13/bits/fs_path.h:
+
+/usr/include/c++/13/bits/fs_ops.h:
+
+/usr/include/c++/13/bits/fs_fwd.h:
+
+/usr/include/c++/13/bits/fs_dir.h:
 
 /usr/include/c++/13/pstl/pstl_config.h:
 
@@ -1183,6 +1209,10 @@ CMakeFiles/RealTimeDataPipeline.dir/src/main.cpp.o: /home/raaz/Programming/proje
 
 /usr/include/c++/13/istream:
 
+/usr/include/c++/13/bits/std_thread.h:
+
+/usr/include/c++/13/initializer_list:
+
 /usr/include/c++/13/ext/string_conversions.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
@@ -1202,8 +1232,6 @@ CMakeFiles/RealTimeDataPipeline.dir/src/main.cpp.o: /home/raaz/Programming/proje
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
 /usr/include/c++/13/fstream:
-
-/usr/include/c++/13/bits/fs_path.h:
 
 /usr/include/c++/13/cstddef:
 
@@ -1243,17 +1271,21 @@ CMakeFiles/RealTimeDataPipeline.dir/src/main.cpp.o: /home/raaz/Programming/proje
 
 /usr/include/c++/13/bits/postypes.h:
 
+/usr/include/c++/13/iomanip:
+
 /usr/include/c++/13/bits/new_allocator.h:
 
 /usr/include/c++/13/bits/stl_uninitialized.h:
+
+/usr/include/c++/13/locale:
 
 /usr/include/c++/13/bits/stl_vector.h:
 
 /usr/include/c++/13/bits/stl_tempbuf.h:
 
-/usr/include/c++/13/bits/functexcept.h:
-
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h:
 
 /usr/include/c++/13/bits/stl_construct.h:
 
@@ -1318,6 +1350,8 @@ CMakeFiles/RealTimeDataPipeline.dir/src/main.cpp.o: /home/raaz/Programming/proje
 /usr/include/c++/13/bits/chrono.h:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
+
+/usr/include/libintl.h:
 
 /usr/include/c++/13/atomic:
 
@@ -1421,10 +1455,6 @@ CMakeFiles/RealTimeDataPipeline.dir/src/main.cpp.o: /home/raaz/Programming/proje
 
 /usr/include/c++/13/bits/ostream.tcc:
 
-/usr/include/c++/13/bits/fs_ops.h:
-
-/usr/include/c++/13/bits/fs_dir.h:
-
 /usr/include/c++/13/bits/uniform_int_dist.h:
 
 /usr/include/c++/13/bits/locale_classes.tcc:
@@ -1436,8 +1466,6 @@ CMakeFiles/RealTimeDataPipeline.dir/src/main.cpp.o: /home/raaz/Programming/proje
 /usr/include/c++/13/bits/memory_resource.h:
 
 /usr/include/c++/13/bits/memoryfwd.h:
-
-/usr/include/c++/13/bits/fs_fwd.h:
 
 /usr/include/c++/13/bits/stl_heap.h:
 
@@ -1502,6 +1530,12 @@ CMakeFiles/RealTimeDataPipeline.dir/src/main.cpp.o: /home/raaz/Programming/proje
 /usr/include/wctype.h:
 
 /usr/include/sched.h:
+
+/usr/include/c++/13/bits/functexcept.h:
+
+/home/raaz/Programming/project/cpp-project/real_time_data_pipeline/include/Utils.hpp:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h:
 
 /usr/include/stdc-predef.h:
 
@@ -1649,12 +1683,6 @@ CMakeFiles/RealTimeDataPipeline.dir/src/main.cpp.o: /home/raaz/Programming/proje
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h:
 
-/usr/include/c++/13/chrono:
-
-/home/raaz/Programming/project/cpp-project/real_time_data_pipeline/src/main.cpp:
-
-/usr/include/c++/13/backward/auto_ptr.h:
-
 /usr/include/c++/13/bits/istream.tcc:
 
 /usr/include/c++/13/bits/locale_conv.h:
@@ -1665,8 +1693,8 @@ CMakeFiles/RealTimeDataPipeline.dir/src/main.cpp.o: /home/raaz/Programming/proje
 
 /usr/include/c++/13/bits/quoted_string.h:
 
-/usr/include/c++/13/bits/shared_ptr_atomic.h:
+/usr/include/c++/13/chrono:
 
-/usr/include/c++/13/initializer_list:
+/home/raaz/Programming/project/cpp-project/real_time_data_pipeline/src/main.cpp:
 
-/usr/include/c++/13/bits/std_thread.h:
+/usr/include/c++/13/backward/auto_ptr.h:

@@ -1,4 +1,6 @@
 #include "Logger.hpp"
+#include "Utils.hpp"
+
 
 Logger &Logger::instance()
 {
@@ -21,7 +23,7 @@ void Logger::set_log_file(const std::string &filename)
 
 void Logger::log(LogLevel level, const std::string &message) {
     std::lock_guard<std::mutex> lock(log_mutex);
-    std::string full_mgs = "[" + current_timestamp() + "] [" + level_to_string(level) + "] " + message;
+    std::string full_mgs = "[" + Utils::current_timestamp() + "] [" + level_to_string(level) + "] " + message;
 
     if (log_file.is_open()) {
         log_file << full_mgs << std::endl;
@@ -42,12 +44,3 @@ std::string Logger::level_to_string(LogLevel level) {
     }
 }
 
-std::string Logger::current_timestamp() {
-    using namespace std::chrono;
-    auto now = system_clock::now();
-    std::time_t now_time = system_clock::to_time_t(now);
-    char buffer[32];
-    std::strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S", std::localtime(&now_time));
-    return std::string(buffer);
-
-}
