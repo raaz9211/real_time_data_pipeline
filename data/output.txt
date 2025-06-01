@@ -1,0 +1,5 @@
+[Processed] sensor1: 24.5
+[Processed] sensor2: 22.8
+[Processed] sensor3: 25.1
+[Processed] sensor1: 24.9
+[Processed] sensor2: 23.0

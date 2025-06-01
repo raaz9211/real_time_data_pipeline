@@ -1,0 +1,5 @@
+sensor1: 24.5
+sensor2: 22.8
+sensor3: 25.1
+sensor1: 24.9
+sensor2: 23.0
