@@ -10,9 +10,15 @@ add_executable(RealTimeDataPipeline
     src/Logger.cpp
     src/OutputWriter.cpp
     src/ConfigManager.cpp
+    src/DataSourceFactory.cpp
+    src/APIDataSource.cpp 
 )
 
 target_include_directories(RealTimeDataPipeline PRIVATE include)
 
 include(FetchContent)
 
+# ---- libcurl ----
+find_package(CURL REQUIRED)
+target_include_directories(RealTimeDataPipeline PRIVATE ${CURL_INCLUDE_DIRS})
+target_link_libraries(RealTimeDataPipeline PRIVATE ${CURL_LIBRARIES})

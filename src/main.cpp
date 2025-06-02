@@ -5,12 +5,11 @@
 #include <thread>
 #include <atomic>
 
-#include "FileDataSource.hpp"
+#include "DataSourceFactory.hpp"
 #include "DataProcessor.hpp"
 #include "Logger.hpp"
 #include "OutputWriter.hpp"
 #include "ConfigManager.hpp"
-
 
 int main()
 {
@@ -22,9 +21,8 @@ int main()
 
     ConfigManager config("../config/config.json");
 
-
     auto file_path = std::filesystem::path(config.getFilePath());
-    std::unique_ptr<DataSource> fileReader = std::make_unique<FileDataSource>(file_path);
+    std::unique_ptr<DataSource> fileReader = DataSourceFactory::create(config.getDataSourceType());
     DataProcessor dataProcessor;
     OutputWriter outputWriter(config.getOutputPath(), OutputWriter::OutputMode::File, false, true);
     Logger::instance().set_log_file(config.getLogFilePath());
