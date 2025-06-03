@@ -14,6 +14,7 @@ add_executable(RealTimeDataPipeline
     src/APIDataSource.cpp
     src/TrimAndTagStrategy.cpp
     src/UpperCaseStrategy.cpp
+    src/CommandLineParser.cpp
 )
 
 target_include_directories(RealTimeDataPipeline PRIVATE include)

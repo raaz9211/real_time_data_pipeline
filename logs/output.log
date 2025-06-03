@@ -1,60 +1,50 @@
-[2025-06-03 01:36:58] [INFO] Real-Time Data Pipeline started.
-[2025-06-03 01:36:58] [DEBUG] Producer thread started.
-[2025-06-03 01:36:58] [DEBUG] Consume thread started.
-[2025-06-03 01:36:58] [DEBUG] Collector thread started.
-[2025-06-03 01:36:58] [DEBUG] Producer thread finished.
-[2025-06-03 01:36:58] [DEBUG] Consume thread finished.
-[2025-06-03 01:36:58] [INFO] Total processed lines written: 100
-[2025-06-03 01:36:58] [DEBUG] Collector thread finished.
-[2025-06-03 01:36:58] [INFO] Data processing complete. Output written to ../data/output.txt
+[2025-06-03 17:27:45] [INFO] Real-Time Data Pipeline started.
+[2025-06-03 17:27:45] [DEBUG] Producer thread started.
+[2025-06-03 17:27:45] [DEBUG] Consume thread started.
+[2025-06-03 17:27:45] [DEBUG] Collector thread started.
+[2025-06-03 17:27:45] [DEBUG] Producer thread finished.
+[2025-06-03 17:27:45] [DEBUG] Consume thread finished.
+[2025-06-03 17:27:45] [INFO] Total processed lines written: 100
+[2025-06-03 17:27:45] [DEBUG] Collector thread finished.
+[2025-06-03 17:27:45] [INFO] Data processing complete. Output written to ../data/output.txt
 
-[2025-06-03 01:37:08] [INFO] Real-Time Data Pipeline started.
-[2025-06-03 01:37:08] [DEBUG] Consume thread started.
-[2025-06-03 01:37:08] [DEBUG] Collector thread started.
-[2025-06-03 01:37:08] [DEBUG] Producer thread started.
-[2025-06-03 01:37:09] [DEBUG] Producer thread finished.
-[2025-06-03 01:37:09] [DEBUG] Consume thread finished.
-[2025-06-03 01:37:09] [INFO] Total processed lines written: 100
-[2025-06-03 01:37:09] [DEBUG] Collector thread finished.
-[2025-06-03 01:37:09] [INFO] Data processing complete. Output written to ../data/output.txt
+[2025-06-03 17:28:06] [INFO] Real-Time Data Pipeline started.
+[2025-06-03 17:28:06] [DEBUG] Consume thread started.
+[2025-06-03 17:28:06] [DEBUG] Collector thread started.
+[2025-06-03 17:28:06] [DEBUG] Producer thread started.
+[2025-06-03 17:28:07] [DEBUG] Producer thread finished.
+[2025-06-03 17:28:07] [DEBUG] Consume thread finished.
+[2025-06-03 17:28:07] [INFO] Total processed lines written: 100
+[2025-06-03 17:28:07] [DEBUG] Collector thread finished.
+[2025-06-03 17:28:07] [INFO] Data processing complete. Output written to ../data/output.txt
 
-[2025-06-03 15:05:41] [INFO] Real-Time Data Pipeline started.
-[2025-06-03 15:05:41] [DEBUG] Collector thread started.
-[2025-06-03 15:05:41] [DEBUG] Consume thread started.
-[2025-06-03 15:05:41] [DEBUG] Producer thread started.
-[2025-06-03 15:05:41] [DEBUG] Producer thread finished.
-[2025-06-03 15:05:41] [DEBUG] Consume thread finished.
-[2025-06-03 15:05:41] [INFO] Total processed lines written: 100
-[2025-06-03 15:05:41] [DEBUG] Collector thread finished.
-[2025-06-03 15:05:41] [INFO] Data processing complete. Output written to ../data/output.txt
+[2025-06-03 17:28:33] [INFO] Real-Time Data Pipeline started.
+[2025-06-03 17:28:33] [DEBUG] Producer thread started.
+[2025-06-03 17:28:33] [DEBUG] Consume thread started.
+[2025-06-03 17:28:33] [DEBUG] Collector thread started.
+[2025-06-03 17:28:34] [DEBUG] Producer thread finished.
+[2025-06-03 17:28:34] [DEBUG] Consume thread finished.
+[2025-06-03 17:28:34] [INFO] Total processed lines written: 100
+[2025-06-03 17:28:34] [DEBUG] Collector thread finished.
+[2025-06-03 17:28:34] [INFO] Data processing complete. Output written to ../data/output.txt
 
-[2025-06-03 15:05:51] [INFO] Real-Time Data Pipeline started.
-[2025-06-03 15:05:51] [DEBUG] Producer thread started.
-[2025-06-03 15:05:51] [DEBUG] Consume thread started.
-[2025-06-03 15:05:51] [DEBUG] Collector thread started.
-[2025-06-03 15:05:52] [DEBUG] Producer thread finished.
-[2025-06-03 15:05:52] [DEBUG] Consume thread finished.
-[2025-06-03 15:05:52] [INFO] Total processed lines written: 100
-[2025-06-03 15:05:52] [DEBUG] Collector thread finished.
-[2025-06-03 15:05:52] [INFO] Data processing complete. Output written to ../data/output.txt
+[2025-06-03 17:28:39] [INFO] Real-Time Data Pipeline started.
+[2025-06-03 17:28:39] [DEBUG] Producer thread started.
+[2025-06-03 17:28:39] [DEBUG] Consume thread started.
+[2025-06-03 17:28:39] [DEBUG] Collector thread started.
+[2025-06-03 17:28:40] [DEBUG] Producer thread finished.
+[2025-06-03 17:28:40] [DEBUG] Consume thread finished.
+[2025-06-03 17:28:40] [INFO] Total processed lines written: 100
+[2025-06-03 17:28:40] [DEBUG] Collector thread finished.
+[2025-06-03 17:28:40] [INFO] Data processing complete. Output written to ../data/output.txt
 
-[2025-06-03 15:06:23] [INFO] Real-Time Data Pipeline started.
-[2025-06-03 15:06:23] [DEBUG] Consume thread started.
-[2025-06-03 15:06:23] [DEBUG] Producer thread started.
-[2025-06-03 15:06:23] [DEBUG] Collector thread started.
-[2025-06-03 15:06:24] [DEBUG] Producer thread finished.
-[2025-06-03 15:06:24] [DEBUG] Consume thread finished.
-[2025-06-03 15:06:24] [INFO] Total processed lines written: 100
-[2025-06-03 15:06:24] [DEBUG] Collector thread finished.
-[2025-06-03 15:06:24] [INFO] Data processing complete. Output written to ../data/output.txt
-
-[2025-06-03 15:06:44] [INFO] Real-Time Data Pipeline started.
-[2025-06-03 15:06:44] [DEBUG] Producer thread started.
-[2025-06-03 15:06:44] [DEBUG] Consume thread started.
-[2025-06-03 15:06:44] [DEBUG] Collector thread started.
-[2025-06-03 15:06:44] [DEBUG] Producer thread finished.
-[2025-06-03 15:06:44] [DEBUG] Consume thread finished.
-[2025-06-03 15:06:44] [INFO] Total processed lines written: 100
-[2025-06-03 15:06:44] [DEBUG] Collector thread finished.
-[2025-06-03 15:06:44] [INFO] Data processing complete. Output written to ../data/output.txt
+[2025-06-03 17:30:55] [INFO] Real-Time Data Pipeline started.
+[2025-06-03 17:30:55] [DEBUG] Producer thread started.
+[2025-06-03 17:30:55] [DEBUG] Collector thread started.
+[2025-06-03 17:30:55] [DEBUG] Consume thread started.
+[2025-06-03 17:30:56] [DEBUG] Producer thread finished.
+[2025-06-03 17:30:56] [DEBUG] Consume thread finished.
+[2025-06-03 17:30:56] [INFO] Total processed lines written: 100
+[2025-06-03 17:30:56] [DEBUG] Collector thread finished.
+[2025-06-03 17:30:56] [INFO] Data processing complete. Output written to ../data/output.txt
 

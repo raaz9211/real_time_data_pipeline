@@ -11,17 +11,23 @@
 #include "OutputWriter.hpp"
 #include "ConfigManager.hpp"
 #include "TrimAndTagStrategy.hpp"
+#include "CommandLineParser.hpp"
 // #include "UpperCaseStrategy.hpp"
 
-int main()
+int main(int argc, char* argv[])
 {
+    CommandLineParser parser(argc, argv);
 
+
+    std::string config_path = parser.get_option("--config", "config.json");
+    bool verbose = parser.has_flag("--verbose");
+    
     ThreadSafeQueue<std::string> raw_queue;
     ThreadSafeQueue<std::string> processed_queue;
     std::atomic<bool> producer_done = false;
     std::atomic<bool> processing_done = false;
 
-    ConfigManager config("../config/config.json");
+    ConfigManager config(config_path);
 
     auto file_path = std::filesystem::path(config.getFilePath());
     std::unique_ptr<DataSource> fileReader = DataSourceFactory::create(config.getDataSourceType());
