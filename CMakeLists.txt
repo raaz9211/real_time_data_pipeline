@@ -11,7 +11,9 @@ add_executable(RealTimeDataPipeline
     src/OutputWriter.cpp
     src/ConfigManager.cpp
     src/DataSourceFactory.cpp
-    src/APIDataSource.cpp 
+    src/APIDataSource.cpp
+    src/TrimAndTagStrategy.cpp
+    src/UpperCaseStrategy.cpp
 )
 
 target_include_directories(RealTimeDataPipeline PRIVATE include)

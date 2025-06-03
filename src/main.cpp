@@ -10,6 +10,8 @@
 #include "Logger.hpp"
 #include "OutputWriter.hpp"
 #include "ConfigManager.hpp"
+#include "TrimAndTagStrategy.hpp"
+// #include "UpperCaseStrategy.hpp"
 
 int main()
 {
@@ -23,7 +25,7 @@ int main()
 
     auto file_path = std::filesystem::path(config.getFilePath());
     std::unique_ptr<DataSource> fileReader = DataSourceFactory::create(config.getDataSourceType());
-    DataProcessor dataProcessor;
+    std::unique_ptr<DataProcessor> dataProcessor = std::make_unique<DataProcessor>(std::make_unique<TrimAndTagStrategy>());
     OutputWriter outputWriter(config.getOutputPath(), OutputWriter::OutputMode::File, false, true);
     Logger::instance().set_log_file(config.getLogFilePath());
 
@@ -52,7 +54,7 @@ int main()
                             try
                             {
                                 Logger::instance().log(LogLevel::DEBUG, "Consume thread started.");
-                                dataProcessor.consume(raw_queue, producer_done, processed_queue);
+                                dataProcessor->consume(raw_queue, producer_done, processed_queue);
                                 Logger::instance().log(LogLevel::DEBUG, "Consume thread finished.");
                             }
                             catch (const std::exception &e)

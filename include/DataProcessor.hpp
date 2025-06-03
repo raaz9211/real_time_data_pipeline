@@ -5,11 +5,14 @@
 #include <atomic>
 
 #include "ThreadSafeQueue.hpp"
+#include "ProcessingStrategy.hpp"
 
 
 
 class DataProcessor {
+private:
+     std::unique_ptr<ProcessingStrategy> strategy_;
 public:
-    std::string process_line(const std::string &line);
+    explicit DataProcessor(std::unique_ptr<ProcessingStrategy> strategy);
     void consume(ThreadSafeQueue<std::string>& input_queue, std::atomic<bool>& done_flag, ThreadSafeQueue<std::string>& output_queue);
 };

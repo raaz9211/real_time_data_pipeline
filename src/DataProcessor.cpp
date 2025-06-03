@@ -1,9 +1,6 @@
-#include <sstream>
-#include <algorithm>
-#include <cctype>
-#include <iostream>
-
 #include "DataProcessor.hpp"
+
+DataProcessor::DataProcessor(std::unique_ptr<ProcessingStrategy> strategy) : strategy_(std::move(strategy)) {}
 
 void DataProcessor::consume(ThreadSafeQueue<std::string> &input_queue, std::atomic<bool> &done_flag, ThreadSafeQueue<std::string> &output_queue)
 {
@@ -12,17 +9,9 @@ void DataProcessor::consume(ThreadSafeQueue<std::string> &input_queue, std::atom
         std::string line;
         if (input_queue.try_pop(line))
         {
-            std::string result = process_line(line);
-            // std::cout << result << std::endl;
+            std::string result = strategy_->process(line);
             output_queue.push(result);
         }
     }
 }
 
-std::string DataProcessor::process_line(const std::string &line)
-{
-    std::string trimmed = line;
-    trimmed.erase(trimmed.find_last_not_of(" \n\r\t") + 1);
-    trimmed.erase(0, trimmed.find_first_not_of(" \n\r\t"));
-    return "[Processed] " + trimmed;
-}
