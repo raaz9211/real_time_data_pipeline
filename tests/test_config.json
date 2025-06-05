@@ -1,0 +1,8 @@
+{
+    "data_source": "file",
+    "file_path": "../tests/test_file.txt",
+    "api_url": "https://jsonplaceholder.typicode.com/posts",
+    "output_path": "../data/output.txt",
+    "log_file_path": "../logs/output.log",
+    "enable_timestamp": true
+}

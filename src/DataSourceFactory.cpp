@@ -1,12 +1,9 @@
 #include "DataSourceFactory.hpp"
 #include "FileDataSource.hpp"
-#include "ConfigManager.hpp"
 #include "APIDataSource.hpp" 
 
-std::unique_ptr<DataSource> DataSourceFactory::create(const std::string &type)
+std::unique_ptr<DataSource> DataSourceFactory::create(const std::string &type, const ConfigManager &config)
 {
-    ConfigManager config("../config/config.json");
-
     if (type == "file")
     {
         return std::make_unique<FileDataSource>(config.getFilePath());

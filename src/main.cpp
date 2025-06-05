@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
     ConfigManager config(config_path);
 
     auto file_path = std::filesystem::path(config.getFilePath());
-    std::unique_ptr<DataSource> fileReader = DataSourceFactory::create(config.getDataSourceType());
+    std::unique_ptr<DataSource> fileReader = DataSourceFactory::create(config.getDataSourceType(), config);
     std::unique_ptr<DataProcessor> dataProcessor = std::make_unique<DataProcessor>(std::make_unique<TrimAndTagStrategy>());
     OutputWriter outputWriter(config.getOutputPath(), OutputWriter::OutputMode::File, false, true);
     Logger::instance().set_log_file(config.getLogFilePath());
