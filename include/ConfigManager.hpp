@@ -10,6 +10,7 @@ public:
     explicit ConfigManager(const std::string &configFilePath);
 
     std::string getDataSourceType() const;
+    void validate() const;
     std::string getFilePath() const;
     std::string getApiUrl() const;
     std::string getOutputPath() const;

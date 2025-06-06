@@ -38,8 +38,14 @@ add_executable(DataProcessorTests
     src/DataSourceFactory.cpp
     src/ConfigManager.cpp
     tests/test_APIDataSource.cpp
+    tests/test_FullPipeline_File.cpp
+    src/OutputWriter.cpp
+    tests/test_Logger.cpp
+    src/Logger.cpp
 )
 
 target_link_libraries(DataProcessorTests gtest gtest_main pthread ${CURL_LIBRARIES})
 target_include_directories(DataProcessorTests PRIVATE include)
 add_test(NAME DataProcessorTests COMMAND DataProcessorTests)
+# set(CMAKE_BUILD_TYPE Debug)
+

@@ -1,70 +1,66 @@
-[2025-06-03 17:27:45] [INFO] Real-Time Data Pipeline started.
-[2025-06-03 17:27:45] [DEBUG] Producer thread started.
-[2025-06-03 17:27:45] [DEBUG] Consume thread started.
-[2025-06-03 17:27:45] [DEBUG] Collector thread started.
-[2025-06-03 17:27:45] [DEBUG] Producer thread finished.
-[2025-06-03 17:27:45] [DEBUG] Consume thread finished.
-[2025-06-03 17:27:45] [INFO] Total processed lines written: 100
-[2025-06-03 17:27:45] [DEBUG] Collector thread finished.
-[2025-06-03 17:27:45] [INFO] Data processing complete. Output written to ../data/output.txt
+[2025-06-06 22:53:15] [INFO] Real-Time Data Pipeline started.
+[2025-06-06 22:53:15] [DEBUG] Producer thread started.
+[2025-06-06 22:53:15] [DEBUG] Consume thread started.
+[2025-06-06 22:53:15] [DEBUG] Collector thread started.
+[2025-06-06 22:53:15] [ERROR] Producer exception: libcurl request failed: Couldn't resolve host name
+[2025-06-06 22:53:15] [DEBUG] Consume thread finished.
+[2025-06-06 22:53:15] [INFO] Total processed lines written: 0
+[2025-06-06 22:53:15] [DEBUG] Collector thread finished.
+[2025-06-06 22:53:15] [INFO] Processing took 4 ms
+[2025-06-06 22:53:15] [INFO] Data processing complete. Output written to ../data/output.txt
 
-[2025-06-03 17:28:06] [INFO] Real-Time Data Pipeline started.
-[2025-06-03 17:28:06] [DEBUG] Consume thread started.
-[2025-06-03 17:28:06] [DEBUG] Collector thread started.
-[2025-06-03 17:28:06] [DEBUG] Producer thread started.
-[2025-06-03 17:28:07] [DEBUG] Producer thread finished.
-[2025-06-03 17:28:07] [DEBUG] Consume thread finished.
-[2025-06-03 17:28:07] [INFO] Total processed lines written: 100
-[2025-06-03 17:28:07] [DEBUG] Collector thread finished.
-[2025-06-03 17:28:07] [INFO] Data processing complete. Output written to ../data/output.txt
+[2025-06-06 22:53:28] [INFO] Real-Time Data Pipeline started.
+[2025-06-06 22:53:28] [DEBUG] Producer thread started.
+[2025-06-06 22:53:28] [DEBUG] Consume thread started.
+[2025-06-06 22:53:28] [DEBUG] Collector thread started.
+[2025-06-06 22:53:28] [ERROR] Producer exception: libcurl request failed: Couldn't resolve host name
+[2025-06-06 22:53:28] [DEBUG] Consume thread finished.
+[2025-06-06 22:53:28] [INFO] Total processed lines written: 0
+[2025-06-06 22:53:28] [DEBUG] Collector thread finished.
+[2025-06-06 22:53:28] [INFO] Processing took 4 ms
+[2025-06-06 22:53:28] [INFO] Data processing complete. Output written to ../data/output.txt
 
-[2025-06-03 17:28:33] [INFO] Real-Time Data Pipeline started.
-[2025-06-03 17:28:33] [DEBUG] Producer thread started.
-[2025-06-03 17:28:33] [DEBUG] Consume thread started.
-[2025-06-03 17:28:33] [DEBUG] Collector thread started.
-[2025-06-03 17:28:34] [DEBUG] Producer thread finished.
-[2025-06-03 17:28:34] [DEBUG] Consume thread finished.
-[2025-06-03 17:28:34] [INFO] Total processed lines written: 100
-[2025-06-03 17:28:34] [DEBUG] Collector thread finished.
-[2025-06-03 17:28:34] [INFO] Data processing complete. Output written to ../data/output.txt
+[2025-06-06 22:53:41] [INFO] Real-Time Data Pipeline started.
+[2025-06-06 22:53:41] [DEBUG] Consume thread started.
+[2025-06-06 22:53:41] [DEBUG] Collector thread started.
+[2025-06-06 22:53:41] [DEBUG] Producer thread started.
+[2025-06-06 22:53:41] [ERROR] Producer exception: libcurl request failed: Couldn't resolve host name
+[2025-06-06 22:53:41] [DEBUG] Consume thread finished.
+[2025-06-06 22:53:41] [INFO] Total processed lines written: 0
+[2025-06-06 22:53:41] [DEBUG] Collector thread finished.
+[2025-06-06 22:53:41] [INFO] Processing took 4 ms
+[2025-06-06 22:53:41] [INFO] Data processing complete. Output written to ../data/output.txt
 
-[2025-06-03 17:28:39] [INFO] Real-Time Data Pipeline started.
-[2025-06-03 17:28:39] [DEBUG] Producer thread started.
-[2025-06-03 17:28:39] [DEBUG] Consume thread started.
-[2025-06-03 17:28:39] [DEBUG] Collector thread started.
-[2025-06-03 17:28:40] [DEBUG] Producer thread finished.
-[2025-06-03 17:28:40] [DEBUG] Consume thread finished.
-[2025-06-03 17:28:40] [INFO] Total processed lines written: 100
-[2025-06-03 17:28:40] [DEBUG] Collector thread finished.
-[2025-06-03 17:28:40] [INFO] Data processing complete. Output written to ../data/output.txt
+[2025-06-06 22:54:26] [INFO] Real-Time Data Pipeline started.
+[2025-06-06 22:54:26] [DEBUG] Producer thread started.
+[2025-06-06 22:54:26] [DEBUG] Consume thread started.
+[2025-06-06 22:54:26] [DEBUG] Collector thread started.
+[2025-06-06 22:54:26] [ERROR] Producer exception: libcurl request failed: Couldn't resolve host name
+[2025-06-06 22:54:26] [DEBUG] Consume thread finished.
+[2025-06-06 22:54:26] [INFO] Total processed lines written: 0
+[2025-06-06 22:54:26] [DEBUG] Collector thread finished.
+[2025-06-06 22:54:26] [INFO] Processing took 4 ms
+[2025-06-06 22:54:26] [INFO] Data processing complete. Output written to ../data/output.txt
 
-[2025-06-03 17:30:55] [INFO] Real-Time Data Pipeline started.
-[2025-06-03 17:30:55] [DEBUG] Producer thread started.
-[2025-06-03 17:30:55] [DEBUG] Collector thread started.
-[2025-06-03 17:30:55] [DEBUG] Consume thread started.
-[2025-06-03 17:30:56] [DEBUG] Producer thread finished.
-[2025-06-03 17:30:56] [DEBUG] Consume thread finished.
-[2025-06-03 17:30:56] [INFO] Total processed lines written: 100
-[2025-06-03 17:30:56] [DEBUG] Collector thread finished.
-[2025-06-03 17:30:56] [INFO] Data processing complete. Output written to ../data/output.txt
+[2025-06-06 22:57:09] [INFO] Real-Time Data Pipeline started.
+[2025-06-06 22:57:09] [DEBUG] Collector thread started.
+[2025-06-06 22:57:09] [DEBUG] Producer thread started.
+[2025-06-06 22:57:09] [DEBUG] Consume thread started.
+[2025-06-06 22:57:09] [ERROR] Producer exception: libcurl request failed: Couldn't resolve host name
+[2025-06-06 22:57:09] [DEBUG] Consume thread finished.
+[2025-06-06 22:57:09] [INFO] Total processed lines written: 0
+[2025-06-06 22:57:09] [DEBUG] Collector thread finished.
+[2025-06-06 22:57:09] [INFO] Processing took 4 ms
+[2025-06-06 22:57:09] [INFO] Data processing complete. Output written to ../data/output.txt
 
-[2025-06-03 20:26:56] [INFO] Real-Time Data Pipeline started.
-[2025-06-03 20:26:56] [DEBUG] Producer thread started.
-[2025-06-03 20:26:56] [DEBUG] Consume thread started.
-[2025-06-03 20:26:56] [DEBUG] Collector thread started.
-[2025-06-03 20:26:57] [DEBUG] Producer thread finished.
-[2025-06-03 20:26:57] [DEBUG] Consume thread finished.
-[2025-06-03 20:26:57] [INFO] Total processed lines written: 100
-[2025-06-03 20:26:57] [DEBUG] Collector thread finished.
-[2025-06-03 20:26:57] [INFO] Data processing complete. Output written to ../data/output.txt
-
-[2025-06-03 20:27:10] [INFO] Real-Time Data Pipeline started.
-[2025-06-03 20:27:10] [DEBUG] Collector thread started.
-[2025-06-03 20:27:10] [DEBUG] Consume thread started.
-[2025-06-03 20:27:10] [DEBUG] Producer thread started.
-[2025-06-03 20:27:11] [DEBUG] Producer thread finished.
-[2025-06-03 20:27:11] [DEBUG] Consume thread finished.
-[2025-06-03 20:27:11] [INFO] Total processed lines written: 100
-[2025-06-03 20:27:11] [DEBUG] Collector thread finished.
-[2025-06-03 20:27:11] [INFO] Data processing complete. Output written to ../data/output.txt
+[2025-06-06 22:57:37] [INFO] Real-Time Data Pipeline started.
+[2025-06-06 22:57:37] [DEBUG] Producer thread started.
+[2025-06-06 22:57:37] [DEBUG] Consume thread started.
+[2025-06-06 22:57:37] [DEBUG] Collector thread started.
+[2025-06-06 22:57:37] [DEBUG] Producer thread finished.
+[2025-06-06 22:57:37] [DEBUG] Consume thread finished.
+[2025-06-06 22:57:37] [INFO] Total processed lines written: 100
+[2025-06-06 22:57:37] [DEBUG] Collector thread finished.
+[2025-06-06 22:57:37] [INFO] Processing took 550 ms
+[2025-06-06 22:57:37] [INFO] Data processing complete. Output written to ../data/output.txt
 

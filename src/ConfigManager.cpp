@@ -14,6 +14,19 @@ ConfigManager::ConfigManager(const std::string &configFilePath)
     file >> configData;
 }
 
+void ConfigManager::validate() const
+{
+    if (!getFilePath().empty() && !std::filesystem::exists(getFilePath()))
+    {
+        throw std::runtime_error("Invalid file path: " + getFilePath());
+    }
+    // You can also validate API URL here if applicable
+    if (!getApiUrl().empty() && getApiUrl().find("http") != 0)
+    {
+        throw std::runtime_error("Invalid API URL: " + getApiUrl());
+    }
+}
+
 std::string ConfigManager::getDataSourceType() const
 {
     return configData.value("data_source", "file");
@@ -43,4 +56,3 @@ bool ConfigManager::isTimestampEnabled() const
 {
     return configData.value("enable_timestamp", false);
 }
-
