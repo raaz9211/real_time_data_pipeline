@@ -30,13 +30,13 @@ TEST(FullPipelineTest, ProcessesFileEndToEnd) {
     // 2) Create DataSource, Processor, and OutputWriter
     auto source = std::make_unique<FileDataSource>(inputFile);
     ThreadSafeQueue<std::string> rawQueue;
-
+    std::atomic<bool> stop_flag = false;
     std::atomic<bool> producerDone = false;
 
     // Producer thread: read from file into rawQueue
     std::thread producer([&]() {
         // Producer thread: read from file into rawQueue
-        source->fetch_data(rawQueue);
+        source->fetch_data(rawQueue, stop_flag);
         producerDone = true;
     });
 

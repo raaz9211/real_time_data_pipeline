@@ -12,5 +12,5 @@ private:
 
 public:
     explicit APIDataSource(const std::string &url);
-    void fetch_data(ThreadSafeQueue<std::string> &queue) override;
+    void fetch_data(ThreadSafeQueue<std::string> &queue, std::atomic<bool>& stop_flag) override;
 };

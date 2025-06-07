@@ -13,5 +13,5 @@ private:
     std::string filename_;
 public:
     explicit FileDataSource(const std::string &filename);
-    void fetch_data(ThreadSafeQueue<std::string> &lines) override;    
+    void fetch_data(ThreadSafeQueue<std::string> &lines, std::atomic<bool>& stop_flag) override;    
 };

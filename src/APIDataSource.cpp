@@ -7,14 +7,15 @@
 
 APIDataSource::APIDataSource(const std::string &url) : url_(url) {}
 
-size_t WriteCallback(char* ptr, size_t size, size_t nmemb, void* userdata) {
+size_t WriteCallback(char *ptr, size_t size, size_t nmemb, void *userdata)
+{
     size_t totalSize = size * nmemb;
     auto *response = static_cast<std::string *>(userdata);
     response->append(ptr, totalSize);
     return totalSize;
 }
 
-void APIDataSource::fetch_data(ThreadSafeQueue<std::string> &queue)
+void APIDataSource::fetch_data(ThreadSafeQueue<std::string> &queue, std::atomic<bool> &stop_flag)
 {
     CURL *curl = curl_easy_init();
     if (!curl)
@@ -30,22 +31,25 @@ void APIDataSource::fetch_data(ThreadSafeQueue<std::string> &queue)
 
     CURLcode res = curl_easy_perform(curl);
 
-    if(res != CURLE_OK) {
+    if (res != CURLE_OK)
+    {
         curl_easy_cleanup(curl);
         throw std::runtime_error("libcurl request failed: " + std::string(curl_easy_strerror(res)));
     }
 
     curl_easy_cleanup(curl);
 
-
     // Parse JSON array and push strings to queue
 
     auto jsonData = nlohmann::json::parse(response);
 
-    for(const auto &item : jsonData) {
-        queue.push(item.dump());  // Push the JSON object as a string
+    for (const auto &item : jsonData)
+    {
+        if (stop_flag)
+        {
+            break;
+        } // Exit early if stopping
 
+        queue.push(item.dump()); // Push the JSON object as a string
     }
-
 }
-

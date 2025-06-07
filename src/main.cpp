@@ -12,8 +12,9 @@
 #include "OutputWriter.hpp"
 #include "ConfigManager.hpp"
 #include "TrimAndTagStrategy.hpp"
-#include "CommandLineParser.hpp"
 // #include "UpperCaseStrategy.hpp"
+#include "CommandLineParser.hpp"
+#include "SignalHandler.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -29,6 +30,9 @@ int main(int argc, char *argv[])
         ThreadSafeQueue<std::string> processed_queue;
         std::atomic<bool> producer_done = false;
         std::atomic<bool> processing_done = false;
+        std::atomic<bool> stop_flag = false;
+
+        SignalHandler::setup(stop_flag);
 
         ConfigManager config(config_path);
 
@@ -47,7 +51,7 @@ int main(int argc, char *argv[])
                                  try
                                  {
                                      Logger::instance().log(LogLevel::DEBUG, "Producer thread started.");
-                                     fileReader->fetch_data(raw_queue);
+                                     fileReader->fetch_data(raw_queue, stop_flag);
                                      Logger::instance().log(LogLevel::DEBUG, "Producer thread finished.");
                                  }
                                  catch (const std::exception &e)

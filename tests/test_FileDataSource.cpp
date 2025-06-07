@@ -27,7 +27,8 @@ TEST(FileDataSourceTest, FetchesLinesFromFile) {
     // Act
     auto dataSource = DataSourceFactory::create("file", config);
     ThreadSafeQueue<std::string> queue;
-    dataSource->fetch_data(queue);
+    std::atomic<bool> stop_flag = false;
+    dataSource->fetch_data(queue, stop_flag);
 
     // Assert
     ASSERT_FALSE(queue.empty());

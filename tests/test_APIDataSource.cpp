@@ -20,7 +20,8 @@ TEST(APIDataSourceTest, FetchesJsonDataSuccessfully) {
     APIDataSource apiDataSource(url);
 
     ThreadSafeQueue<std::string> queue;
-    apiDataSource.fetch_data(queue);
+    std::atomic<bool> stop_flag = false;
+    apiDataSource.fetch_data(queue, stop_flag);
 
     ASSERT_FALSE(queue.empty());
     std::string item;
