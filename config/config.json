@@ -1,5 +1,5 @@
 {
-    "data_source": "api",
+    "data_source": "file",
     "file_path": "../data/input.txt",
     "api_url": "https://jsonplaceholder.typicode.com/posts",
     "output_path": "../data/output.txt",

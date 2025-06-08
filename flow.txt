@@ -63,3 +63,26 @@ RingBufferQueue
 
 ThreadPool
 
+
+
+🔧 Recommended Order of Implementation
+🟨 Phase 7: Enhancements
+Order	Feature	Reason/
+// 1️⃣	Graceful Shutdown	Ensures clean exits, avoids thread/resource leaks. Essential for production safety.
+// 2️⃣	Retry Logic for API Failures	Makes your API ingestion more robust to network issues and transient failures.
+// 3️⃣	Multisource Ingest (API + File)	Demonstrates flexibility — process real-time and static data simultaneously.
+4️⃣	Support JSON/CSV	Widens adoption — users can choose preferred data format. Easy to configure.
+5️⃣	Live Metrics (Custom or Prometheus)	Useful once system is stable. Helps in visibility and diagnostics.
+
+🧠 Optional Future Phases
+Order	Module	Reason
+6️⃣	ThreadPool	Replaces fixed threads; boosts concurrency efficiency and prepares for scaling.
+7️⃣	RingBufferQueue	Introduces bounded memory usage — critical for long-running or embedded systems.
+8️⃣	Real-Time Stats (Throughput/Latency/Error Rate)	Ideal once your ThreadPool and metrics tracking are in place.
+9️⃣	WebSocketClient	Streams processed data to a live dashboard. Better to do after core enhancements.
+🔟	DatabaseWriter	Persists output in a structured DB. Optional but powerful for integration and analytics.
+
+
+✅ Graceful Shutdown → Retry Logic → Multisource Ingest → ThreadPool
+
+./RealTimeDataPipeline --config=../config/config.json --data_source=api --verbose

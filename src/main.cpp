@@ -23,7 +23,8 @@ int main(int argc, char *argv[])
     {
         CommandLineParser parser(argc, argv);
 
-        std::string config_path = parser.get_option("--config", "config.json");
+        std::string config_path = parser.get_option("--config", "../config/config.json");
+        std::string data_source = parser.get_option("--data_source", "file");
         bool verbose = parser.has_flag("--verbose");
 
         ThreadSafeQueue<std::string> raw_queue;
@@ -36,8 +37,11 @@ int main(int argc, char *argv[])
 
         ConfigManager config(config_path);
 
-        auto file_path = std::filesystem::path(config.getFilePath());
-        std::unique_ptr<DataSource> fileReader = DataSourceFactory::create(config.getDataSourceType(), config);
+        if(data_source == ""){
+            data_source = config.getDataSourceType();
+        }
+
+        std::unique_ptr<DataSource> fileReader = DataSourceFactory::create(data_source, config);
         std::unique_ptr<DataProcessor> dataProcessor = std::make_unique<DataProcessor>(std::make_unique<TrimAndTagStrategy>());
         OutputWriter outputWriter(config.getOutputPath(), OutputWriter::OutputMode::File, false, true);
         Logger::instance().set_log_file(config.getLogFilePath());
