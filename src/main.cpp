@@ -15,6 +15,7 @@
 // #include "UpperCaseStrategy.hpp"
 #include "CommandLineParser.hpp"
 #include "SignalHandler.hpp"
+#include "ThreadPool.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -34,10 +35,10 @@ int main(int argc, char *argv[])
         std::atomic<bool> stop_flag = false;
 
         SignalHandler::setup(stop_flag);
-
         ConfigManager config(config_path);
 
-        if(data_source == ""){
+        if (data_source == "")
+        {
             data_source = config.getDataSourceType();
         }
 
@@ -49,40 +50,47 @@ int main(int argc, char *argv[])
         Logger::instance().log(LogLevel::INFO, "Real-Time Data Pipeline started.");
         std::clog << "Real-Time Data Pipeline started." << std::endl;
 
-        // Producer thread
-        std::thread producer([&]()
-                             {
-                                 try
-                                 {
-                                     Logger::instance().log(LogLevel::DEBUG, "Producer thread started.");
-                                     fileReader->fetch_data(raw_queue, stop_flag);
-                                     Logger::instance().log(LogLevel::DEBUG, "Producer thread finished.");
-                                 }
-                                 catch (const std::exception &e)
-                                 {
-                                     Logger::instance().log(LogLevel::ERROR, (std::string) "Producer exception: " + e.what());
-                                 }
-                                 producer_done = true; // Set this to notify consumer that no more data is coming
-                             });
+        auto start = std::chrono::high_resolution_clock::now();
 
-        // Consumer thread
-        std::thread consume([&]()
-                            {
-                                try
-                                {
-                                    Logger::instance().log(LogLevel::DEBUG, "Consume thread started.");
-                                    dataProcessor->consume(raw_queue, producer_done, processed_queue);
-                                    Logger::instance().log(LogLevel::DEBUG, "Consume thread finished.");
-                                }
-                                catch (const std::exception &e)
-                                {
-                                    Logger::instance().log(LogLevel::ERROR, (std::string) "Consume exception: " + e.what());
-                                }
-                                processing_done = true; // Mark processing as complete
-                            });
-        size_t count = 0;
-        std::thread collector([&]()
-                              {
+        // Create a thread pool with number of threads equal to hardware concurrency
+        ThreadPool pool(std::thread::hardware_concurrency());
+
+        // Producer Task
+        pool.submit([&]()
+                    {
+                        try
+                        {
+                            Logger::instance().log(LogLevel::DEBUG, "Producer thread started.");
+                            fileReader->fetch_data(raw_queue, stop_flag);
+                            Logger::instance().log(LogLevel::DEBUG, "Producer thread finished.");
+                        }
+                        catch (const std::exception &e)
+                        {
+                            Logger::instance().log(LogLevel::ERROR, (std::string) "Producer exception: " + e.what());
+                        }
+                        producer_done = true; // Set this to notify consumer that no more data is coming
+                    });
+
+        // Consumer Task
+        pool.submit([&]()
+                    {
+                        try
+                        {
+                            Logger::instance().log(LogLevel::DEBUG, "Consume thread started.");
+                            dataProcessor->consume(raw_queue, producer_done, processed_queue);
+                            Logger::instance().log(LogLevel::DEBUG, "Consume thread finished.");
+                        }
+                        catch (const std::exception &e)
+                        {
+                            Logger::instance().log(LogLevel::ERROR, (std::string) "Consume exception: " + e.what());
+                        }
+                        processing_done = true; // Mark processing as complete
+                    });
+
+        std::atomic<size_t> count = 0;
+        // Collector Task
+        pool.submit([&]()
+                    {
                             Logger::instance().log(LogLevel::DEBUG, "Collector thread started.");
                             
                             while (!processing_done || !processed_queue.empty())
@@ -98,14 +106,10 @@ int main(int argc, char *argv[])
                                     std::this_thread::sleep_for(std::chrono::milliseconds(1));
                                 }
                             }
+        pool.shutdown();
+
         Logger::instance().log(LogLevel::INFO, "Total processed lines written: " + std::to_string(count));
         Logger::instance().log(LogLevel::DEBUG, "Collector thread finished."); });
-
-        auto start = std::chrono::high_resolution_clock::now();
-
-        producer.join();
-        consume.join();
-        collector.join();
 
         auto end = std::chrono::high_resolution_clock::now();
         auto duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
@@ -113,7 +117,7 @@ int main(int argc, char *argv[])
         std::clog << "Processing took " << duration_ms << "ms" << std::endl;
         Logger::instance().log(LogLevel::INFO, "Processing took " + std::to_string(duration_ms) + " ms");
 
-        double throughput = count / (duration_ms / 1000.0); // records per second
+        double throughput = count.load() / (duration_ms / 1000.0); // records per second
         std::clog << "Throughput: " << throughput << " records/second\n";
 
         std::clog << "Data processing complete. Output written to " + config.getOutputPath() << std::endl;

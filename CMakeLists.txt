@@ -16,6 +16,7 @@ add_executable(RealTimeDataPipeline
     src/UpperCaseStrategy.cpp
     src/CommandLineParser.cpp
     src/SignalHandler.cpp
+    src/ThreadPool.cpp
 )
 
 target_include_directories(RealTimeDataPipeline PRIVATE include)
