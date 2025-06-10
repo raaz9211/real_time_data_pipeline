@@ -46,4 +46,8 @@ public:
         std::lock_guard<std::mutex> lock(mtx_);
         return queue_.empty();
     }
+
+    std::size_t size() const {
+        return queue_.size();
+    }
 };
