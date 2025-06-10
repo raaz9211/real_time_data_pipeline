@@ -2,7 +2,7 @@
 #include <curl/curl.h>
 #include <iostream>
 #include <thread>
-#include <json.hpp>
+#include <nlohmann/json.hpp>
 
 #include "APIDataSource.hpp"
 #include "Logger.hpp"

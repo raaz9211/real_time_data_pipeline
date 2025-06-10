@@ -1,53 +1,58 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.15)
 project(RealTimeDataPipeline)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-add_executable(RealTimeDataPipeline
-    src/main.cpp
-    src/FileDataSource.cpp
-    src/DataProcessor.cpp
-    src/Logger.cpp
-    src/OutputWriter.cpp
-    src/ConfigManager.cpp
-    src/DataSourceFactory.cpp
-    src/APIDataSource.cpp
-    src/TrimAndTagStrategy.cpp
-    src/UpperCaseStrategy.cpp
-    src/CommandLineParser.cpp
-    src/SignalHandler.cpp
-    src/ThreadPool.cpp
-)
+# Enable warnings and debug symbols
+add_compile_options(-Wall -Wextra -pedantic -O2 -g)
 
-target_include_directories(RealTimeDataPipeline PRIVATE include)
-
-include(FetchContent)
-
-# ---- libcurl ----
+# -----------------------------------------
+# Find Dependencies
+# -----------------------------------------
 find_package(CURL REQUIRED)
-target_include_directories(RealTimeDataPipeline PRIVATE ${CURL_INCLUDE_DIRS})
-target_link_libraries(RealTimeDataPipeline PRIVATE ${CURL_LIBRARIES})
 
+# -----------------------------------------
+# Include Directories
+# -----------------------------------------
+include_directories(include third_party)
+
+# -----------------------------------------
+# Core Library (src/*.cpp)
+# -----------------------------------------
+file(GLOB_RECURSE CORE_SRC CONFIGURE_DEPENDS
+    src/*.cpp
+)
+list(REMOVE_ITEM CORE_SRC ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
+
+add_library(core_lib ${CORE_SRC})
+target_include_directories(core_lib PUBLIC include third_party)
+target_link_libraries(core_lib PUBLIC ${CURL_LIBRARIES} pthread)
+
+# -----------------------------------------
+# Main Executable (src/main.cpp)
+# -----------------------------------------
+add_executable(main_pipeline src/main.cpp)
+target_link_libraries(main_pipeline PRIVATE core_lib)
+
+# -----------------------------------------
+# GoogleTest - Test Runner
+# -----------------------------------------
 enable_testing()
-add_executable(DataProcessorTests 
-    tests/test_DataProcessor.cpp
-    src/DataProcessor.cpp
-    src/TrimAndTagStrategy.cpp
-    src/UpperCaseStrategy.cpp
-    tests/test_FileDataSource.cpp
-    src/FileDataSource.cpp
-    src/APIDataSource.cpp
-    src/DataSourceFactory.cpp
-    src/ConfigManager.cpp
-    tests/test_APIDataSource.cpp
-    tests/test_FullPipeline_File.cpp
-    src/OutputWriter.cpp
-    tests/test_Logger.cpp
-    src/Logger.cpp
+
+file(GLOB_RECURSE TEST_SRC CONFIGURE_DEPENDS
+    tests/*.cpp
 )
 
-target_link_libraries(DataProcessorTests gtest gtest_main pthread ${CURL_LIBRARIES})
-target_include_directories(DataProcessorTests PRIVATE include)
-add_test(NAME DataProcessorTests COMMAND DataProcessorTests)
-# set(CMAKE_BUILD_TYPE Debug)
+add_executable(test_runner ${TEST_SRC})
+target_link_libraries(test_runner PRIVATE core_lib gtest gtest_main pthread)
+target_include_directories(test_runner PRIVATE include third_party)
 
+add_test(NAME AllTests COMMAND test_runner)
+
+# -----------------------------------------
+# Optional Future Tools (disabled for now)
+# -----------------------------------------
+# add_executable(metrics_server tools/metrics_server.cpp)
+# target_link_libraries(metrics_server PRIVATE core_lib pthread)

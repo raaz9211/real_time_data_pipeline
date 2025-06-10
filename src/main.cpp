@@ -106,10 +106,11 @@ int main(int argc, char *argv[])
                                     std::this_thread::sleep_for(std::chrono::milliseconds(1));
                                 }
                             }
-        pool.shutdown();
 
         Logger::instance().log(LogLevel::INFO, "Total processed lines written: " + std::to_string(count));
         Logger::instance().log(LogLevel::DEBUG, "Collector thread finished."); });
+
+        pool.shutdown();
 
         auto end = std::chrono::high_resolution_clock::now();
         auto duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();

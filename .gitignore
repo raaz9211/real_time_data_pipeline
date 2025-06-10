@@ -1,5 +1,7 @@
 # Build artifacts
 build/
+cmake-build-debug
 
 # IDE and editor files
 .vscode/
+.idea/
