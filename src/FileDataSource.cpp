@@ -4,7 +4,7 @@
 
 FileDataSource::FileDataSource(const std::string &filename) : filename_(filename) {}
 
-void FileDataSource::fetch_data(ThreadSafeQueue<std::string> &lines, std::atomic<bool>& stop_flag)
+void FileDataSource::fetch_data(RingBufferQueue<std::string> &lines, std::atomic<bool>& stop_flag)
 {
     std::ifstream file(filename_);
     std::string line;

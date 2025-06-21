@@ -9,17 +9,17 @@
 
 APIDataSource::APIDataSource(const std::string &url) : url_(url) {}
 
-size_t WriteCallback(char *ptr, size_t size, size_t nmemb, void *userdata)
+size_t WriteCallback(char *ptr, size_t size, size_t memb, void *userdata)
 {
-    size_t totalSize = size * nmemb;
+    size_t totalSize = size * memb;
     auto *response = static_cast<std::string *>(userdata);
     response->append(ptr, totalSize);
     return totalSize;
 }
 
-void APIDataSource::fetch_data(ThreadSafeQueue<std::string> &queue, std::atomic<bool> &stop_flag)
+void APIDataSource::fetch_data(RingBufferQueue<std::string> &queue, std::atomic<bool> &stop_flag)
 {
-    const int max_retries = 5;
+    constexpr int max_retries = 5;
     int retry_delay_ms = 500; // initial delay for backoff
 
     for (int attempt = 1; attempt <= max_retries; ++attempt)

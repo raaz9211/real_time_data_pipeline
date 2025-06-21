@@ -5,7 +5,7 @@
 #include <string>
 
 #include "DataSource.hpp"
-#include "ThreadSafeQueue.hpp"
+#include "RingBufferQueue.hpp"
 
 
 class FileDataSource : public DataSource {
@@ -13,5 +13,5 @@ private:
     std::string filename_;
 public:
     explicit FileDataSource(const std::string &filename);
-    void fetch_data(ThreadSafeQueue<std::string> &lines, std::atomic<bool>& stop_flag) override;    
+    void fetch_data(RingBufferQueue<std::string> &lines, std::atomic<bool>& stop_flag) override;
 };

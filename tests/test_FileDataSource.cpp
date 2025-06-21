@@ -4,7 +4,7 @@
 #include <filesystem>
 
 #include "DataSourceFactory.hpp"
-#include "ThreadSafeQueue.hpp"
+#include "RingBufferQueue.hpp"
 #include "ConfigManager.hpp"
 
 
@@ -26,7 +26,7 @@ TEST(FileDataSourceTest, FetchesLinesFromFile) {
 
     // Act
     auto dataSource = DataSourceFactory::create("file", config);
-    ThreadSafeQueue<std::string> queue;
+    RingBufferQueue<std::string> queue(1024);
     std::atomic<bool> stop_flag = false;
     dataSource->fetch_data(queue, stop_flag);
 

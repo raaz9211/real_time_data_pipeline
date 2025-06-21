@@ -30,8 +30,8 @@ int main(int argc, char *argv[]) {
         // Start metrics server
         start_metrics_server(std::stoi(metrics_server_port));
 
-        ThreadSafeQueue<std::string> raw_queue;
-        ThreadSafeQueue<std::string> processed_queue;
+        RingBufferQueue<std::string> raw_queue(1024);
+        RingBufferQueue<std::string> processed_queue(1024);
         std::atomic<bool> producer_done = false;
         std::atomic<bool> processing_done = false;
         std::atomic<bool> stop_flag = false;
@@ -122,6 +122,12 @@ int main(int argc, char *argv[]) {
 
         std::clog << "Data processing complete. Output written to " + config.getOutputPath() << std::endl;
         Logger::instance().log(LogLevel::INFO, "Data processing complete. Output written to ../data/output.txt\n");
+
+        if (parser.has_flag("--wait")) {
+            std::clog << "Metrics server is still running at http://localhost:8080/metrics\n";
+            std::clog << "Press Ctrl+C to exit...\n";
+            std::this_thread::sleep_for(std::chrono::seconds(20));
+        }
     } catch (const std::exception &ex) {
         Logger::instance().log(LogLevel::ERROR, std::string("Unhandled exception: ") + ex.what());
         std::cerr << "Unhandled exception: " << ex.what() << std::endl;

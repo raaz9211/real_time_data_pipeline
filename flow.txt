@@ -72,7 +72,7 @@ Order	Feature	Reason/
 // 2️⃣	Retry Logic for API Failures	Makes your API ingestion more robust to network issues and transient failures.
 // 3️⃣	Multisource Ingest (API + File)	Demonstrates flexibility — process real-time and static data simultaneously.
 4️⃣	Support JSON/CSV	Widens adoption — users can choose preferred data format. Easy to configure.
-5️⃣	Live Metrics (Custom or Prometheus)	Useful once system is stable. Helps in visibility and diagnostics.
+// 5️⃣	Live Metrics (Custom or Prometheus)	Useful once system is stable. Helps in visibility and diagnostics.
 
 🧠 Optional Future Phases
 Order	Module	Reason

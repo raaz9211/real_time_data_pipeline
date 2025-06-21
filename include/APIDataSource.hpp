@@ -3,7 +3,7 @@
 #include <string>
 
 #include "DataSource.hpp"
-#include "ThreadSafeQueue.hpp"
+#include "RingBufferQueue.hpp"
 
 class APIDataSource : public DataSource
 {
@@ -12,5 +12,5 @@ private:
 
 public:
     explicit APIDataSource(const std::string &url);
-    void fetch_data(ThreadSafeQueue<std::string> &queue, std::atomic<bool>& stop_flag) override;
+    void fetch_data(RingBufferQueue<std::string> &queue, std::atomic<bool>& stop_flag) override;
 };

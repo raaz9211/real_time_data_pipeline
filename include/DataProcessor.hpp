@@ -4,7 +4,7 @@
 #include <vector>
 #include <atomic>
 
-#include "ThreadSafeQueue.hpp"
+#include "RingBufferQueue.hpp"
 #include "ProcessingStrategy.hpp"
 
 
@@ -14,5 +14,5 @@ private:
      std::unique_ptr<ProcessingStrategy> strategy_;
 public:
     explicit DataProcessor(std::unique_ptr<ProcessingStrategy> strategy);
-    void consume(ThreadSafeQueue<std::string>& input_queue, std::atomic<bool>& done_flag, ThreadSafeQueue<std::string>& output_queue);
+    void consume(RingBufferQueue<std::string>& input_queue, std::atomic<bool>& done_flag, RingBufferQueue<std::string>& output_queue);
 };

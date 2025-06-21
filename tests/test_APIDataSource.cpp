@@ -5,7 +5,7 @@
 #include <cstdlib>
 
 #include "APIDataSource.hpp"
-#include "ThreadSafeQueue.hpp"
+#include "RingBufferQueue.hpp"
 
 TEST(APIDataSourceTest, FetchesJsonDataSuccessfully) {
     // Start a local HTTP server (Python) that returns a JSON array
@@ -19,7 +19,8 @@ TEST(APIDataSourceTest, FetchesJsonDataSuccessfully) {
     std::string url = "http://localhost:8000/mock_data.json";
     APIDataSource apiDataSource(url);
 
-    ThreadSafeQueue<std::string> queue;
+#include <stdexcept>
+    RingBufferQueue<std::string> queue(1024);
     std::atomic<bool> stop_flag = false;
     apiDataSource.fetch_data(queue, stop_flag);
 

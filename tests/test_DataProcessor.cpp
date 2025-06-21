@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include <atomic>
 
-#include "ThreadSafeQueue.hpp"
+#include "RingBufferQueue.hpp"
 #include "DataProcessor.hpp"
 #include "TrimAndTagStrategy.hpp"
 #include "UpperCaseStrategy.hpp"
@@ -25,8 +25,8 @@ TEST(UpperCaseStrategyTest, ConvertsToUpperCase)
 
 TEST(DataProcessorTrimAndTagStrategyTest, UsesStrategyCorrectly)
 {
-    ThreadSafeQueue<std::string> input;
-    ThreadSafeQueue<std::string> output;
+    RingBufferQueue<std::string> input(1024);
+    RingBufferQueue<std::string> output(1024);
     std::atomic<bool> done(false);
 
     input.push(" hello ");
@@ -43,8 +43,8 @@ TEST(DataProcessorTrimAndTagStrategyTest, UsesStrategyCorrectly)
 
 TEST(DataProcessorUpperCaseStrategyTTest, UsesStrategyCorrectly)
 {
-    ThreadSafeQueue<std::string> input;
-    ThreadSafeQueue<std::string> output;
+    RingBufferQueue<std::string> input(1024);
+    RingBufferQueue<std::string> output(1024);
     std::atomic<bool> done(false);
 
     input.push("hello");

@@ -2,7 +2,7 @@
 
 DataProcessor::DataProcessor(std::unique_ptr<ProcessingStrategy> strategy) : strategy_(std::move(strategy)) {}
 
-void DataProcessor::consume(ThreadSafeQueue<std::string> &input_queue, std::atomic<bool> &done_flag, ThreadSafeQueue<std::string> &output_queue)
+void DataProcessor::consume(RingBufferQueue<std::string> &input_queue, std::atomic<bool> &done_flag, RingBufferQueue<std::string> &output_queue)
 {
     while (!done_flag || !input_queue.empty())
     {

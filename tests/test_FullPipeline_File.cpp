@@ -6,7 +6,7 @@
 
 #include "ConfigManager.hpp"
 #include "DataSourceFactory.hpp"
-#include "ThreadSafeQueue.hpp"
+#include "RingBufferQueue.hpp"
 #include "DataProcessor.hpp"
 #include "TrimAndTagStrategy.hpp"
 #include "OutputWriter.hpp"
@@ -29,7 +29,7 @@ TEST(FullPipelineTest, ProcessesFileEndToEnd) {
 
     // 2) Create DataSource, Processor, and OutputWriter
     auto source = std::make_unique<FileDataSource>(inputFile);
-    ThreadSafeQueue<std::string> rawQueue;
+    RingBufferQueue<std::string> rawQueue(1024);
     std::atomic<bool> stop_flag = false;
     std::atomic<bool> producerDone = false;
 
@@ -41,7 +41,7 @@ TEST(FullPipelineTest, ProcessesFileEndToEnd) {
     });
 
     DataProcessor processor(std::make_unique<TrimAndTagStrategy>());
-    ThreadSafeQueue<std::string> processedQueue;
+    RingBufferQueue<std::string> processedQueue(1024);
 
 
     std::thread consumer([&]() {
