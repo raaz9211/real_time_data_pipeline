@@ -18,6 +18,7 @@
 #include "ThreadPool.hpp"
 #include "MetricsServer.hpp"
 #include "MetricsCollector.hpp"
+#include "DatabaseWriter.hpp"
 
 int main(int argc, char *argv[]) {
     try {
@@ -45,6 +46,8 @@ int main(int argc, char *argv[]) {
         std::unique_ptr<DataProcessor> dataProcessor = std::make_unique<DataProcessor>(
             std::make_unique<TrimAndTagStrategy>());
         OutputWriter outputWriter(config.getOutputPath(), OutputWriter::OutputMode::File, false, true);
+        DatabaseWriter db_writer(config.getOutputDBPath());
+
         Logger::instance().set_log_file(config.getLogFilePath());
 
         Logger::instance().log(LogLevel::INFO, "Real-Time Data Pipeline started.");
@@ -90,7 +93,9 @@ int main(int argc, char *argv[]) {
                 std::string processed;
                 if (processed_queue.try_pop(processed)) {
                     auto t1 = std::chrono::high_resolution_clock::now();
-                    outputWriter.write(processed);
+                    // outputWriter.write(processed);
+                    db_writer.insert_record(processed);  // Requires you to pass original too
+
                     auto t2 = std::chrono::high_resolution_clock::now();
 
                     double latency_ms = std::chrono::duration<double, std::milli>(t2 - t1).count();

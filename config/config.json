@@ -3,6 +3,7 @@
     "file_path": "../data/input.txt",
     "api_url": "https://jsonplaceholder.typicode.com/posts",
     "output_path": "../data/output.txt",
+    "output_db_path": "../data/output.db",
     "log_file_path": "../logs/output.log",
     "enable_timestamp": true
 }

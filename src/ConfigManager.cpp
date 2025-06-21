@@ -47,6 +47,12 @@ std::string ConfigManager::getOutputPath() const
     return configData.value("output_path", "../data/output.txt");
 }
 
+std::string ConfigManager::getOutputDBPath() const
+{
+    return configData.value("output_db_path", "../data/output.db");
+}
+
+
 std::string ConfigManager::getLogFilePath() const
 {
     return configData.value("log_file_path", "../logs/output.log");

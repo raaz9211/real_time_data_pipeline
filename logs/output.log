@@ -10,3 +10,62 @@
 [2025-06-21 17:41:57] [INFO] Processing took 693 ms
 [2025-06-21 17:41:57] [INFO] Data processing complete. Output written to ../data/output.txt
 
+[2025-06-21 18:55:19] [INFO] Real-Time Data Pipeline started.
+[2025-06-21 18:55:19] [DEBUG] Collector thread started.
+[2025-06-21 18:55:19] [DEBUG] Consume thread started.
+[2025-06-21 18:55:19] [DEBUG] Producer thread started.
+[2025-06-21 18:55:20] [INFO] API fetch successful.
+[2025-06-21 18:55:20] [DEBUG] Producer thread finished.
+[2025-06-21 18:55:20] [DEBUG] Consume thread finished.
+[2025-06-21 18:55:20] [INFO] Total processed lines written: 100
+[2025-06-21 18:55:20] [DEBUG] Collector thread finished.
+[2025-06-21 18:55:20] [INFO] Processing took 795 ms
+[2025-06-21 18:55:20] [INFO] Data processing complete. Output written to ../data/output.txt
+
+[2025-06-21 18:55:47] [INFO] Real-Time Data Pipeline started.
+[2025-06-21 18:55:47] [DEBUG] Consume thread started.
+[2025-06-21 18:55:47] [DEBUG] Collector thread started.
+[2025-06-21 18:55:47] [DEBUG] Producer thread started.
+[2025-06-21 18:55:48] [INFO] API fetch successful.
+[2025-06-21 18:55:48] [DEBUG] Producer thread finished.
+[2025-06-21 18:55:48] [DEBUG] Consume thread finished.
+[2025-06-21 18:55:48] [INFO] Total processed lines written: 100
+[2025-06-21 18:55:48] [DEBUG] Collector thread finished.
+[2025-06-21 18:55:48] [INFO] Processing took 600 ms
+[2025-06-21 18:55:48] [INFO] Data processing complete. Output written to ../data/output.txt
+
+[2025-06-21 18:56:40] [INFO] Real-Time Data Pipeline started.
+[2025-06-21 18:56:40] [DEBUG] Consume thread started.
+[2025-06-21 18:56:40] [DEBUG] Collector thread started.
+[2025-06-21 18:56:40] [DEBUG] Producer thread started.
+[2025-06-21 18:56:40] [INFO] API fetch successful.
+[2025-06-21 18:56:40] [DEBUG] Producer thread finished.
+[2025-06-21 18:56:40] [DEBUG] Consume thread finished.
+[2025-06-21 18:56:40] [INFO] Total processed lines written: 100
+[2025-06-21 18:56:40] [DEBUG] Collector thread finished.
+[2025-06-21 18:56:40] [INFO] Processing took 753 ms
+[2025-06-21 18:56:40] [INFO] Data processing complete. Output written to ../data/output.txt
+
+[2025-06-21 18:57:29] [INFO] Real-Time Data Pipeline started.
+[2025-06-21 18:57:29] [DEBUG] Collector thread started.
+[2025-06-21 18:57:29] [DEBUG] Consume thread started.
+[2025-06-21 18:57:29] [DEBUG] Producer thread started.
+[2025-06-21 18:57:30] [INFO] API fetch successful.
+[2025-06-21 18:57:30] [DEBUG] Producer thread finished.
+[2025-06-21 18:57:30] [DEBUG] Consume thread finished.
+[2025-06-21 18:57:30] [INFO] Total processed lines written: 100
+[2025-06-21 18:57:30] [DEBUG] Collector thread finished.
+[2025-06-21 18:57:30] [INFO] Processing took 823 ms
+[2025-06-21 18:57:30] [INFO] Data processing complete. Output written to ../data/output.txt
+
+[2025-06-21 18:57:48] [INFO] Real-Time Data Pipeline started.
+[2025-06-21 18:57:48] [DEBUG] Consume thread started.
+[2025-06-21 18:57:48] [DEBUG] Collector thread started.
+[2025-06-21 18:57:48] [DEBUG] Producer thread started.
+[2025-06-21 18:57:48] [DEBUG] Producer thread finished.
+[2025-06-21 18:57:48] [DEBUG] Consume thread finished.
+[2025-06-21 18:57:48] [INFO] Total processed lines written: 5
+[2025-06-21 18:57:48] [DEBUG] Collector thread finished.
+[2025-06-21 18:57:48] [INFO] Processing took 23 ms
+[2025-06-21 18:57:48] [INFO] Data processing complete. Output written to ../data/output.txt
+

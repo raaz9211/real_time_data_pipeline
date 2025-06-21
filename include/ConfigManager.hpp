@@ -1,7 +1,6 @@
 #pragma once
 
 #include <string>
-#include <unordered_map>
 #include <nlohmann/json.hpp>
 
 class ConfigManager
@@ -14,6 +13,7 @@ public:
     std::string getFilePath() const;
     std::string getApiUrl() const;
     std::string getOutputPath() const;
+    std::string getOutputDBPath() const;
     std::string getLogFilePath() const;
     bool isTimestampEnabled() const;
 

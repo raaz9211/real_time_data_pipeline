@@ -28,7 +28,7 @@ list(REMOVE_ITEM CORE_SRC ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
 
 add_library(core_lib ${CORE_SRC})
 target_include_directories(core_lib PUBLIC include third_party)
-target_link_libraries(core_lib PUBLIC ${CURL_LIBRARIES} pthread)
+target_link_libraries(core_lib PUBLIC ${CURL_LIBRARIES} pthread sqlite3)
 
 # -----------------------------------------
 # Main Executable (src/main.cpp)

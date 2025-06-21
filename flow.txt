@@ -77,10 +77,10 @@ Order	Feature	Reason/
 🧠 Optional Future Phases
 Order	Module	Reason
 // 6️⃣	ThreadPool	Replaces fixed threads; boosts concurrency efficiency and prepares for scaling.
-7️⃣	RingBufferQueue	Introduces bounded memory usage — critical for long-running or embedded systems.
+// 7️⃣	RingBufferQueue	Introduces bounded memory usage — critical for long-running or embedded systems.
 8️⃣	Real-Time Stats (Throughput/Latency/Error Rate)	Ideal once your ThreadPool and metrics tracking are in place.
 9️⃣	WebSocketClient	Streams processed data to a live dashboard. Better to do after core enhancements.
-🔟	DatabaseWriter	Persists output in a structured DB. Optional but powerful for integration and analytics.
+// 🔟	DatabaseWriter	Persists output in a structured DB. Optional but powerful for integration and analytics.
 
 
 ✅ Graceful Shutdown → Retry Logic → Multisource Ingest → ThreadPool
