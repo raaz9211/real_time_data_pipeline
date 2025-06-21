@@ -3,7 +3,6 @@
 #include <gtest/gtest.h>
 #include <string>
 #include <thread>
-#include <vector>
 
 
 TEST(RingBufferQueueTest, PushAndPopSingleItem) {
@@ -110,7 +109,7 @@ TEST(RingBufferQueueTest, TryPushPopMultiThreaded) {
     std::thread producer([&]() {
         for (int i = 0; i < 1000; ++i) {
             if (queue.try_push(i)) {
-                produced++;
+                ++produced;
             }
             std::this_thread::sleep_for(std::chrono::microseconds(1));
         }
@@ -121,7 +120,7 @@ TEST(RingBufferQueueTest, TryPushPopMultiThreaded) {
         int val;
         for (int i = 0; i < 1000; ++i) {
             if (queue.try_pop(val)) {
-                consumed++;
+                ++consumed;
             }
             std::this_thread::sleep_for(std::chrono::microseconds(1));
         }
@@ -129,6 +128,5 @@ TEST(RingBufferQueueTest, TryPushPopMultiThreaded) {
 
     producer.join();
     consumer.join();
-
     EXPECT_GE(produced.load(), consumed.load()); // Can't consume more than produced
 }
