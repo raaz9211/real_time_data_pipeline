@@ -19,13 +19,13 @@ void RingBufferQueue<T>::push(const T &item) {
 template<typename T>
 void RingBufferQueue<T>::pop(T &item) {
     std::unique_lock<std::mutex> lock(mtx);
-    not_full.wait(lock, [this]() {return count > 0;});
+    not_empty.wait(lock, [this]() {return count > 0;});
 
     item = buffer[head];
     head = (head + 1) % capacity;
     count -= 1;
 
-    not_empty.notify_one();
+    not_full.notify_one();
 }
 
 template<typename T>
@@ -56,7 +56,7 @@ bool RingBufferQueue<T>::try_pop(T &item) {
     head = (head + 1) % capacity;
     count -= 1;
 
-    not_empty.notify_one();
+    not_full.notify_one();
     return true;
 }
 
