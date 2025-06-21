@@ -78,3 +78,4 @@ bool RingBufferQueue<T>::full() const {
 
 // Required: Explicit instantiation for types used
 template class RingBufferQueue<std::string>;
+template class RingBufferQueue<int>;

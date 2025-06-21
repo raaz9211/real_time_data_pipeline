@@ -354,3 +354,15 @@
 [2025-06-21 16:57:17] [INFO] Processing took 596 ms
 [2025-06-21 16:57:17] [INFO] Data processing complete. Output written to ../data/output.txt
 
+[2025-06-21 17:33:48] [INFO] Real-Time Data Pipeline started.
+[2025-06-21 17:33:48] [DEBUG] Collector thread started.
+[2025-06-21 17:33:48] [DEBUG] Producer thread started.
+[2025-06-21 17:33:48] [DEBUG] Consume thread started.
+[2025-06-21 17:33:49] [INFO] API fetch successful.
+[2025-06-21 17:33:49] [DEBUG] Producer thread finished.
+[2025-06-21 17:33:49] [DEBUG] Consume thread finished.
+[2025-06-21 17:33:49] [INFO] Total processed lines written: 100
+[2025-06-21 17:33:49] [DEBUG] Collector thread finished.
+[2025-06-21 17:33:49] [INFO] Processing took 629 ms
+[2025-06-21 17:33:49] [INFO] Data processing complete. Output written to ../data/output.txt
+
