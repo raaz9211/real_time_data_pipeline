@@ -9,7 +9,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 add_compile_options(-Wall -Wextra -pedantic -O2 -g)
 
 # -----------------------------------------
-# Find Dependencies
+# Find System Dependencies
 # -----------------------------------------
 find_package(CURL REQUIRED)
 
@@ -19,16 +19,26 @@ find_package(CURL REQUIRED)
 include_directories(include third_party)
 
 # -----------------------------------------
+# ixwebsocket (from third_party)
+# -----------------------------------------
+file(GLOB_RECURSE IXWEBSOCKET_SRC CONFIGURE_DEPENDS
+        third_party/ixwebsocket/*.cpp
+)
+
+add_library(IXWebSocket STATIC ${IXWEBSOCKET_SRC})
+target_include_directories(IXWebSocket PUBLIC third_party/ixwebsocket)
+
+# -----------------------------------------
 # Core Library (src/*.cpp)
 # -----------------------------------------
 file(GLOB_RECURSE CORE_SRC CONFIGURE_DEPENDS
-    src/*.cpp
+        src/*.cpp
 )
 list(REMOVE_ITEM CORE_SRC ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
 
 add_library(core_lib ${CORE_SRC})
 target_include_directories(core_lib PUBLIC include third_party)
-target_link_libraries(core_lib PUBLIC ${CURL_LIBRARIES} pthread sqlite3)
+target_link_libraries(core_lib PUBLIC ${CURL_LIBRARIES} pthread sqlite3 IXWebSocket)
 
 # -----------------------------------------
 # Main Executable (src/main.cpp)
@@ -42,7 +52,7 @@ target_link_libraries(main_pipeline PRIVATE core_lib)
 enable_testing()
 
 file(GLOB_RECURSE TEST_SRC CONFIGURE_DEPENDS
-    tests/*.cpp
+        tests/*.cpp
 )
 
 add_executable(test_runner ${TEST_SRC})
@@ -52,7 +62,7 @@ target_include_directories(test_runner PRIVATE include third_party)
 add_test(NAME AllTests COMMAND test_runner)
 
 # -----------------------------------------
-# Optional Future Tools (disabled for now)
+# Optional Future Tools
 # -----------------------------------------
 # add_executable(metrics_server tools/metrics_server.cpp)
 # target_link_libraries(metrics_server PRIVATE core_lib pthread)

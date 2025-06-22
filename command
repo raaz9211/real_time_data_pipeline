@@ -46,3 +46,15 @@ Data processing complete. Output written to ../data/output.txt
 ==33062== 
 ==33062== For lists of detected and suppressed errors, rerun with: -s
 ==33062== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+sudo apt install libsqlite3-dev
+sudo apt install sqlite3
+
+sudo apt install libssl-dev
+
+websocat ws-l:0.0.0.0:3000 -
+
+npm install ws
+
+node echo-server.js

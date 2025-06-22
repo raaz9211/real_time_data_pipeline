@@ -19,6 +19,7 @@
 #include "MetricsServer.hpp"
 #include "MetricsCollector.hpp"
 #include "DatabaseWriter.hpp"
+#include "WebSocketClient.hpp"
 
 int main(int argc, char *argv[]) {
     try {
@@ -58,6 +59,9 @@ int main(int argc, char *argv[]) {
         // Create a thread pool with number of threads equal to hardware concurrency
         ThreadPool pool(std::thread::hardware_concurrency());
 
+        WebSocketClient wsClient("ws://localhost:3000");
+        wsClient.start();
+        wsClient.send("Hello from pipeline");
         // Producer Task
         pool.submit([&]() {
             try {
@@ -93,8 +97,9 @@ int main(int argc, char *argv[]) {
                 std::string processed;
                 if (processed_queue.try_pop(processed)) {
                     auto t1 = std::chrono::high_resolution_clock::now();
-                    // outputWriter.write(processed);
+                    outputWriter.write(processed);
                     db_writer.insert_record(processed);  // Requires you to pass original too
+                    wsClient.send(processed);
 
                     auto t2 = std::chrono::high_resolution_clock::now();
 
@@ -115,7 +120,7 @@ int main(int argc, char *argv[]) {
         });
 
         pool.shutdown();
-
+        wsClient.stop();
         auto end = std::chrono::high_resolution_clock::now();
         auto duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
