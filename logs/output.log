@@ -137,3 +137,48 @@
 [2025-06-22 18:29:32] [INFO] Processing took 1332 ms
 [2025-06-22 18:29:32] [INFO] Data processing complete. Output written to ../data/output.txt
 
+[2025-06-22 23:24:36] [INFO] Real-Time Data Pipeline started.
+[2025-06-22 23:24:36] [DEBUG] Collector thread started.
+[2025-06-22 23:24:36] [DEBUG] Producer thread started.
+[2025-06-22 23:24:36] [DEBUG] Consume thread started.
+[2025-06-22 23:24:36] [DEBUG] Producer thread finished.
+[2025-06-22 23:24:36] [DEBUG] Consume thread finished.
+[2025-06-22 23:24:36] [INFO] Total processed lines written: 5
+[2025-06-22 23:24:36] [DEBUG] Collector thread finished.
+[2025-06-22 23:24:36] [INFO] Processing took 10 ms
+[2025-06-22 23:24:36] [INFO] Data processing complete. Output written to ../data/output.txt
+
+[2025-06-22 23:24:49] [INFO] Real-Time Data Pipeline started.
+[2025-06-22 23:24:49] [DEBUG] Producer thread started.
+[2025-06-22 23:24:49] [DEBUG] Producer thread finished.
+[2025-06-22 23:24:49] [DEBUG] Consume thread started.
+[2025-06-22 23:24:49] [DEBUG] Consume thread finished.
+[2025-06-22 23:24:49] [DEBUG] Collector thread started.
+[2025-06-22 23:24:49] [INFO] Total processed lines written: 5
+[2025-06-22 23:24:49] [DEBUG] Collector thread finished.
+[2025-06-22 23:24:49] [INFO] Processing took 18 ms
+[2025-06-22 23:24:49] [INFO] Data processing complete. Output written to ../data/output.txt
+
+[2025-06-22 23:24:54] [INFO] Real-Time Data Pipeline started.
+[2025-06-22 23:24:54] [DEBUG] Collector thread started.
+[2025-06-22 23:24:54] [DEBUG] Producer thread started.
+[2025-06-22 23:24:54] [DEBUG] Consume thread started.
+[2025-06-22 23:24:54] [DEBUG] Producer thread finished.
+[2025-06-22 23:24:54] [DEBUG] Consume thread finished.
+[2025-06-22 23:24:54] [INFO] Total processed lines written: 5
+[2025-06-22 23:24:54] [DEBUG] Collector thread finished.
+[2025-06-22 23:24:54] [INFO] Processing took 19 ms
+[2025-06-22 23:24:54] [INFO] Data processing complete. Output written to ../data/output.txt
+
+[2025-06-22 23:24:59] [INFO] Real-Time Data Pipeline started.
+[2025-06-22 23:24:59] [DEBUG] Consume thread started.
+[2025-06-22 23:24:59] [DEBUG] Producer thread started.
+[2025-06-22 23:24:59] [DEBUG] Collector thread started.
+[2025-06-22 23:25:00] [INFO] API fetch successful.
+[2025-06-22 23:25:00] [DEBUG] Producer thread finished.
+[2025-06-22 23:25:00] [DEBUG] Consume thread finished.
+[2025-06-22 23:25:00] [INFO] Total processed lines written: 100
+[2025-06-22 23:25:00] [DEBUG] Collector thread finished.
+[2025-06-22 23:25:00] [INFO] Processing took 790 ms
+[2025-06-22 23:25:00] [INFO] Data processing complete. Output written to ../data/output.txt
+
